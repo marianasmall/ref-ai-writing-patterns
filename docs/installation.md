@@ -82,9 +82,9 @@ Skills don't sync between platforms—you need to install separately for each en
 2. **Add the skill**
    ```bash
    # For personal installation
-   cd ~/.claude/skills/
-   git clone https://github.com/marianasmall/ref-ai-writing-patterns.git
-   cp -r ref-ai-writing-patterns/humanizer-skill ~/.claude/skills/humanizer
+   git clone https://github.com/marianasmall/ref-ai-writing-patterns.git /tmp/ref-ai-writing-patterns
+   mkdir -p ~/.claude/skills/humanizer && cp -r /tmp/ref-ai-writing-patterns/humanizer-skill/. ~/.claude/skills/humanizer/
+   rm -rf /tmp/ref-ai-writing-patterns
    
    # Or manually:
    mkdir -p ~/.claude/skills/humanizer
