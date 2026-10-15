@@ -83,22 +83,22 @@ Skills don't sync between platforms—you need to install separately for each en
    ```bash
    # For personal installation
    cd ~/.claude/skills/
-   git clone https://github.com/marianasmall/ai-writing-patterns.git
-   cp ai-writing-patterns/humanizer-skill ~/.claude/skills/humanizer/ -r
+   git clone https://github.com/marianasmall/ref-ai-writing-patterns.git
+   cp -r ref-ai-writing-patterns/humanizer-skill ~/.claude/skills/humanizer
    
    # Or manually:
    mkdir -p ~/.claude/skills/humanizer
    curl -o ~/.claude/skills/humanizer/SKILL.md \
-     https://raw.githubusercontent.com/marianasmall/ai-writing-patterns/main/humanizer-skill/SKILL.md
+     https://raw.githubusercontent.com/marianasmall/ref-ai-writing-patterns/main/humanizer-skill/SKILL.md
    ```
 
 3. **Verify installation**
    ```bash
-   # List available skills
-   claude skills list
-   
-   # Should show: humanizer
+   # Check the skill file is in place
+   ls ~/.claude/skills/humanizer/SKILL.md
    ```
+
+   Or start `claude` and type `/humanizer`. Once the folder exists, the skill shows up as a slash command.
 
 4. **Use in projects**
    ```bash
@@ -116,7 +116,7 @@ For skills that should only be available in specific projects:
 ```bash
 cd /path/to/your/project
 mkdir -p .claude/skills/humanizer
-cp /path/to/ai-writing-patterns/humanizer-skill/SKILL.md .claude/skills/humanizer/
+cp /path/to/ref-ai-writing-patterns/humanizer-skill/SKILL.md .claude/skills/humanizer/
 ```
 
 ---
@@ -234,5 +234,5 @@ rm -rf ~/.claude/skills/humanizer/
 ## Support
 
 For issues or questions:
-- GitHub Issues: https://github.com/marianasmall/ai-writing-patterns/issues
+- GitHub Issues: https://github.com/marianasmall/ref-ai-writing-patterns/issues
 - Review [troubleshooting section](#troubleshooting) above
