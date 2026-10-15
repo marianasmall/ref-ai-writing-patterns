@@ -1,10 +1,24 @@
 # AI Writing Patterns
 
+Catch 24 documented AI writing patterns so your writing still sounds like you.
+
+**Who this is for:** writers, editors, and teams who draft with AI and want their own voice in the final copy.
+
+[![License: MIT](https://img.shields.io/github/license/marianasmall/ref-ai-writing-patterns)](LICENSE)
+[![Built with Claude Code](https://img.shields.io/badge/Built%20with-Claude%20Code-D97757)](https://claude.com/claude-code)
+[![Last commit](https://img.shields.io/github/last-commit/marianasmall/ref-ai-writing-patterns)](https://github.com/marianasmall/ref-ai-writing-patterns/commits/main)
+
 A methodology and toolkit for detecting AI writing patterns and maintaining authentic voice when working with language models.
+
+### What it looks like
+
+![The 24 patterns grouped into five categories, with a before and after email example](docs/assets/readme-patterns.svg)
+
+*The five pattern categories with their counts, and one real before/after pair from the [examples](examples/before-after.md).*
 
 ## What This Is
 
-When you work with AI writing tools, your content can inadvertently pick up characteristic patterns—mechanical phrases, formulaic structures, and performative language that signal "this was written by AI." This project provides:
+When you work with AI writing tools, your content can inadvertently pick up characteristic patterns: mechanical phrases, formulaic structures, and performative language that signal "this was written by AI." This project provides:
 
 1. **A methodology** for evaluating whether your writing voice prevents common AI patterns
 2. **A detection skill** for Claude that catches 24 documented AI writing patterns
@@ -12,7 +26,7 @@ When you work with AI writing tools, your content can inadvertently pick up char
 
 ## Why This Matters
 
-AI writing assistants are powerful tools, but maintaining authentic voice requires intentional effort. Generic AI outputs often exhibit patterns like:
+AI writing assistants are useful tools, but maintaining authentic voice requires intentional effort. Generic AI outputs often exhibit patterns like:
 
 - Surface-level descriptive verbs ("symbolizing," "reflecting")
 - Weak verb substitutions ("serves as" instead of "is")
@@ -25,21 +39,41 @@ These patterns make content feel mechanical and templated, even when the underly
 ## What's Included
 
 ### Methodology
-**[Gap Analysis Framework](methodology/gap-analysis.md)** — A systematic approach for evaluating any writing guide against known AI writing patterns. Shows how to identify gaps, prioritize coverage, and integrate pattern detection into your workflow.
+**[Gap Analysis Framework](methodology/gap-analysis.md)**: A systematic approach for evaluating any writing guide against known AI writing patterns. Shows how to identify gaps, prioritize coverage, and integrate pattern detection into your workflow.
 
 ### Tools
-**[Humanizer Skill](humanizer-skill/)** — A Claude skill that detects 24 AI writing patterns documented in Wikipedia's "Signs of AI Writing" guide. Works in Claude.ai, Claude Code, and via API.
+**[Humanizer Skill](humanizer-skill/)**: A Claude skill that detects 24 AI writing patterns documented in Wikipedia's "Signs of AI Writing" guide. Works in Claude.ai, Claude Code, and via API.
 
-**[Pattern Reference](humanizer-skill/patterns.md)** — Detailed explanations of all 24 patterns with examples, organized by category (Content, Language, Style, Communication, Filler/Hedging).
+**[Pattern Reference](humanizer-skill/patterns.md)**: Detailed explanations of all 24 patterns with examples, organized by category (Content, Language, Style, Communication, Filler/Hedging).
 
 ### Documentation
-**[Installation Guide](docs/installation.md)** — How to add the humanizer skill to Claude.
+**[Installation Guide](docs/installation.md)**: How to add the humanizer skill to Claude.
 
-**[Integration Guide](docs/integration.md)** — How to adapt the methodology for your own writing voice and use cases.
+**[Integration Guide](docs/integration.md)**: How to adapt the methodology for your own writing voice and use cases.
 
-**[Examples](examples/before-after.md)** — Before/after examples showing patterns and how to fix them.
+**[Examples](examples/before-after.md)**: Before/after examples showing patterns and how to fix them.
 
 ## Quick Start
+
+**Install the skill in Claude Code in 3 steps** (from the [Installation Guide](docs/installation.md), Option 2):
+
+1. Make a folder for the skill:
+   ```bash
+   mkdir -p ~/.claude/skills/humanizer
+   ```
+2. Download the skill file into it:
+   ```bash
+   curl -o ~/.claude/skills/humanizer/SKILL.md \
+     https://raw.githubusercontent.com/marianasmall/ref-ai-writing-patterns/main/humanizer-skill/SKILL.md
+   ```
+3. Start `claude` and ask it to check a draft:
+   ```text
+   Check this file for AI patterns: draft.md
+   ```
+
+Using Claude.ai or the API instead? See Options 1 and 3 in the [Installation Guide](docs/installation.md).
+
+**Then go deeper:**
 
 1. Read the [methodology](methodology/gap-analysis.md) to understand the approach
 2. Install the [humanizer skill](humanizer-skill/) in Claude
@@ -67,7 +101,7 @@ Inspired by [Siqi Chen's humanizer skill](https://github.com/blader/humanizer).
 
 ## License
 
-MIT License - see LICENSE file for details
+MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contributing
 
